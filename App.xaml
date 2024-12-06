@@ -1,0 +1,65 @@
+﻿<Application x:Class="UiComponent1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UiComponent1"
+             StartupUri="View/DashboardView.xaml">
+
+    <Application.Resources>
+        <SolidColorBrush x:Key="SuccessColor" Color="#45DA2C"/>
+        <SolidColorBrush x:Key="TankRedColor" Color="#F64441"/>
+        <SolidColorBrush x:Key="PrimaryColor" Color="#FFC4D5FF"/>
+        <SolidColorBrush x:Key="FirstTankColor" Color="#FF9A99DD"/>
+        <SolidColorBrush x:Key="SecondTankColor" Color="#FFE8527F"/>
+        <SolidColorBrush x:Key="ThirdTankColor" Color="#FFDEA7C2"/>
+        <SolidColorBrush x:Key="FourthTankColor" Color="#FFBAA9EF"/>
+        <SolidColorBrush x:Key="FifthTankColor" Color="#FFBD76AF"/>
+        <SolidColorBrush x:Key="SixthTankColor" Color="#FFF84B76"/>
+        <SolidColorBrush x:Key="SeventhTankColor" Color="#FF646EF4"/>
+        <SolidColorBrush x:Key="EighthTankColor" Color="#FFF28B46"/>
+        <SolidColorBrush x:Key="NinethTankColor" Color="#FFF1E5D8"/>
+        <SolidColorBrush x:Key="TenthTankColor" Color="#FFA49399"/>
+
+        <Style TargetType="Border" x:Key="SucessBorder">
+            <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{ Binding IsOnOf}" Value="true">
+                    <Setter Property="Background" Value="{StaticResource SuccessColor}"/>
+                    <Setter Property="Panel.ZIndex" Value="1"/>
+                </DataTrigger>
+                <DataTrigger Binding="{ Binding IsOnOf}" Value="false">
+                    <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+                    <Setter Property="Panel.ZIndex" Value="0"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Border" x:Key="NotSucessBorder">
+            <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{ Binding IsOnOf}" Value="false">
+                    <Setter Property="Background" Value="{StaticResource SuccessColor}"/>
+                    <Setter Property="Panel.ZIndex" Value="1"/>
+                </DataTrigger>
+                <DataTrigger Binding="{ Binding IsOnOf}" Value="true">
+                    <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+                    <Setter Property="Panel.ZIndex" Value="0"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Grid" x:Key="SucessGrid">
+            <Setter Property="Background" Value="#FFEBDFBF"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{ Binding IsOnOf}" Value="true">
+                    <Setter Property="Background" Value="{StaticResource SuccessColor}"/>
+                    <Setter Property="Panel.ZIndex" Value="1"/>
+                </DataTrigger>
+                <DataTrigger Binding="{ Binding IsOnOf}" Value="false">
+                    <Setter Property="Background" Value="#FFEBDFBF"/>
+                    <Setter Property="Panel.ZIndex" Value="0"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Application.Resources>
+</Application>

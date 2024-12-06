@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="UiComponent1.View.newUserControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UiComponent1.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Right">
+            <Border Height="10" Style="{StaticResource NotSucessBorder}" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Margin="150 70 0 0"  />
+            <Border Background="White" Panel.ZIndex="1"
+         BorderBrush="Black" BorderThickness="1" CornerRadius="4"
+         HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="40" Margin="35 35 0 0">
+                <TextBlock x:Name="txtMotorName" HorizontalAlignment="Center" VerticalAlignment="Center"
+Foreground="Black" FontWeight="SemiBold" FontSize="15" Margin="0,0,0,0" />
+            </Border>
+            <Border Width="120" Height="70"  Style="{StaticResource NotSucessBorder}"  BorderBrush="Black" BorderThickness="1" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin=" 45 40 0 0"/>
+        </Grid>
+        <StackPanel Grid.Column="1" Margin="0 10 0 0" HorizontalAlignment="Left" >
+            <Border Width="430" Height="10" HorizontalAlignment="Right" Margin=" 0 0 5 0" CornerRadius="3" Style="{StaticResource NotSucessBorder}" BorderBrush="Black" BorderThickness="1" />
+            <Border Width="400" Height="100" HorizontalAlignment="Right"  Style="{StaticResource NotSucessBorder}"  Margin="0 0 20 0" BorderThickness="1 0 1 1" BorderBrush="Black"/>
+            <Border Width="100" Height="55"  Style="{StaticResource NotSucessBorder}"  BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin=" 30 0 0 0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

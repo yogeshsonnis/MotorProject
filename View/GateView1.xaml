@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="UiComponent1.View.GateView1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UiComponent1.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+   
+    <Grid HorizontalAlignment="Center" Height="50" Width="40" Margin="5,0,0,0">
+        <StackPanel Height="30">
+            <Polygon Points="-1,0,10,25 30,25,42,0" Height="10" Fill="#FFEBDFBF" Stroke="#FFCDC09E"/>
+            <Border Width="35" Height="10"  Background="#FFEBDFBF" BorderThickness="1.5" BorderBrush="#FFCDC09E"/>
+            <!--<Border Panel.ZIndex="1" Height="10" Width="50"  Background="#FFEBDFBF" BorderBrush="Black" BorderThickness="1.5" CornerRadius="5" HorizontalAlignment="Center" VerticalAlignment="bottom" Margin="5">
+                <TextBlock x:Name="txtGateName" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFEBDFBF" Foreground="Black" FontWeight="SemiBold" FontSize="12" Margin="0,0,0,2" Text="M304"/>
+            </Border>-->
+            <Polygon Points="42,0,0,25,75,25,55,0" Fill="#FFEBDFBF" Stroke="#FFCDC09E" StrokeThickness="1.5" HorizontalAlignment="Center"/>
+         </StackPanel>
+    </Grid>
+   
+</UserControl>
