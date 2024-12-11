@@ -42,8 +42,7 @@
             <Border Background="White" Panel.ZIndex="1"
          BorderBrush="Black" BorderThickness="1" CornerRadius="4"
          HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="30" Margin="115 0 0 30">
-                <TextBlock x:Name="txtMotorName"  HorizontalAlignment="Center" VerticalAlignment="Center"
-Foreground="Black" FontWeight="SemiBold" FontSize="15" Margin="0,0,0,0" />
+                <TextBlock x:Name="txtMotorName"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="SemiBold" FontSize="15" Margin="0,0,0,0" />
             </Border>
             <Border  Width="70" Height="10" Style="{StaticResource NotSucessBorder}"  VerticalAlignment="Bottom" Margin="0 0 105 0"/>
             <Border Width="70" Height="10"  Style="{StaticResource SucessBorder}" VerticalAlignment="Bottom" Margin="216 0 0 0"/>

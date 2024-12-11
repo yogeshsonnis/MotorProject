@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UiComponent1.View"
         mc:Ignorable="d"
-        Title="DashboardView" Height="450" Width="800" WindowState="Maximized">
+        Title="DashboardView" Height="450" Width="1500" WindowState="Maximized">
 
     <Window.Resources>
+        
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="Cambria"/>
             <Setter Property="FontSize" Value="12"/>
@@ -31,77 +32,101 @@
                 </Setter.Value>
             </Setter>
         </Style>
+  
     </Window.Resources>     
     
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="5"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Grid x:Name="MenuGrid" Background="Blue">
+        <Grid x:Name="upperMenuGrid" Background="Blue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="1.4*"/>
+                <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="1.4*"/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Margin="5" Background="DarkBlue" Content="MENU" Foreground="White" />
-            <Button Margin="5" Background="DarkBlue" Grid.Column="2" Content="DASHBOARD" Foreground="White"/>
-            <Button Margin="5" Background="DarkBlue" Grid.Column="4" Content="RAW MATERIAL" Foreground="White"/>
-            <Button Margin="5" Background="DarkBlue" Grid.Column="6" Content="DOSING" Foreground="White"/>
-            <Button Margin="5" Background="DarkBlue" Grid.Column="8" Content="PRODUCTION" Foreground="White"/>
-            <Button Margin="5" Background="DarkBlue" Grid.Column="10" Content="PELETE1" Foreground="White"/>
-            <Button Margin="5" Background="DarkBlue" Grid.Column="12" Content="PACKING" Foreground="White" Click="Button_Click"/>
+            <Button x:Name="cmdMenu" Margin="5"  Content="MENU"/>
+            <Button x:Name="cmdDashboard" Margin="5" Grid.Column="2" Content="DASHBOARD"/>
+            <Button x:Name="cmdRawMaterial" Margin="5" Grid.Column="4" Content="RAW MATERIAL"/>
+            <Button x:Name="cmdDosing" Margin="5" Grid.Column="6" Content="DOSING"/>
+            <Button x:Name="cmdProduction" Margin="5" Grid.Column="8" Content="PRODUCTION"/>
+            <Button x:Name="cmdPelete1" Margin="5" Grid.Column="10" Content="PELETE1"/>
+            <Button x:Name="cmdPacking" Margin="5" Grid.Column="12" Content="PACKING" Click="Button_Click"/>
         </Grid>
 
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="bottomViewGrid" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3.65*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
 
-            <Grid>
-                <local:HorizontalBeltView/>
-            </Grid> 
+            <Grid x:Name="firstViewMotorGrid" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Margin="0,30,0,0">
+                    <local:HorizontalBeltView/>
+                </Grid>
+
+                <ItemsControl x:Name="gatesItemsControl" ItemsSource="{Binding GateCollection}" Margin="0,0,0,-10" Grid.Row="1" Background="Transparent" Panel.ZIndex="2">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:GateView1/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl x:Name="tanksItemsControl" ItemsSource="{Binding TankCollection}" VerticalAlignment="Top" BorderBrush="Transparent" Background="Transparent" Grid.Row="2" Panel.ZIndex="1">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:TankView MaximumValue="{Binding MaxValue}" TankNumber="{Binding TankNumber}" TankName="{Binding TankName}" TankColor="{Binding TankColor}" MinimumValue="{Binding MinValue}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>            
+
+        <Grid Grid.Column="1">
+            <local:ElevatorView/>
+        </Grid>
+        
+        <Grid x:Name="secondViewMotorGrid" Grid.Column="2" Background="LightBlue"></Grid>
             
-            <ItemsControl x:Name="gates" Margin="10,0" ItemsSource="{Binding TankCollection}" Grid.Row="1" Background="Transparent">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:GateView1/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
-            <ItemsControl Margin="10,0" ItemsSource="{Binding TankCollection}" VerticalAlignment="Top" BorderBrush="Transparent" Background="Transparent" Grid.Row="2" x:Name="tanks" Panel.ZIndex="1">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <local:TankView MaximumValue="{Binding MaxValue}" TankNumber="{Binding TankNumber}" TankName="{Binding TankName}" TankColor="{Binding TankColor}" MinimumValue="{Binding MinValue}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+            <Grid x:Name="thirdViewMotorGrid" Grid.Column="4" Background="LightGray"></Grid>
+            
+            <Grid x:Name="fourthViewMotorGrid" Grid.Column="6" Background="LightCoral"></Grid>
         </Grid>
     </Grid>
 </Window>

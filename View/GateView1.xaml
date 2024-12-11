@@ -7,15 +7,60 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
    
-    <Grid HorizontalAlignment="Center" Height="50" Width="40" Margin="5,0,0,0">
+    <!--<Grid HorizontalAlignment="Center" Height="25" Width="32" Margin="5,0,0,0">
         <StackPanel Height="30">
-            <Polygon Points="-1,0,10,25 30,25,42,0" Height="10" Fill="#FFEBDFBF" Stroke="#FFCDC09E"/>
-            <Border Width="35" Height="10"  Background="#FFEBDFBF" BorderThickness="1.5" BorderBrush="#FFCDC09E"/>
-            <!--<Border Panel.ZIndex="1" Height="10" Width="50"  Background="#FFEBDFBF" BorderBrush="Black" BorderThickness="1.5" CornerRadius="5" HorizontalAlignment="Center" VerticalAlignment="bottom" Margin="5">
-                <TextBlock x:Name="txtGateName" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFEBDFBF" Foreground="Black" FontWeight="SemiBold" FontSize="12" Margin="0,0,0,2" Text="M304"/>
-            </Border>-->
-            <Polygon Points="42,0,0,25,75,25,55,0" Fill="#FFEBDFBF" Stroke="#FFCDC09E" StrokeThickness="1.5" HorizontalAlignment="Center"/>
-         </StackPanel>
+            <Polygon Points="0,0,10,25 20,25,32,0" Height="10" Fill="#FFEBDFBF" Stroke="#FFCDC09E"/>
+            <Border Width="24" Height="6"  Background="#FFEBDFBF" BorderThickness="0.3" BorderBrush="#FFCDC09E"/>            
+            <Polygon Points="28,0,15,25,75,25,50,0" Fill="#FFEBDFBF" Stroke="#FFCDC09E" StrokeThickness="1.5" HorizontalAlignment="Center"/>
+
+        </StackPanel>
+        --><!--<Border Panel.ZIndex="1" Height="10" Width="25"  Background="#FFEBDFBF" BorderBrush="Black" BorderThickness="1" CornerRadius="2" HorizontalAlignment="Center" VerticalAlignment="bottom" Margin="0,10,0,0">
+                <TextBlock x:Name="txtGateName" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFEBDFBF" Foreground="Black" FontWeight="SemiBold" FontSize="6" Margin="0,0,0,2" Text="{Binding GateName}"/>
+            </Border>--><!--
+    </Grid>-->
+
+    <!--<Grid Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Path Stroke="#FFCDC09E" Fill="#FFEBDFBF" StrokeThickness="1.5" 
+              Data="M 20 20 L 30 -1 L 70 -1 L 80 20z"/>
+        <Border BorderThickness="1.5,0,1.5,0" Grid.Row="1" Height="10" Width="62" BorderBrush="#FFCDC09E" Background="#FFEBDFBF" Margin="20,0,0,0"/>
+        <Path Grid.Row="2" Stroke="#FFCDC09E" Fill="#FFEBDFBF" StrokeThickness="1.5"
+              Data="M 30 20 L 20 0 L 80 0 L 70 20z"/>
+    </Grid>-->
+
+    <UserControl.Resources>
+        <Style TargetType="Path">
+            <Setter Property="Stroke" Value="#FFCDC09E"/>
+            <Setter Property="Fill" Value="#FFEBDFBF"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=DataContext.IsOnOf}" Value="False">
+                    <Setter Property="Stroke" Value="Black"/>
+                    <Setter Property="Fill" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid Width="30" Height="40" HorizontalAlignment="Center" Margin="3,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Path HorizontalAlignment="Left" Stroke="#FFCDC09E" StrokeThickness="1" Fill="#FFEBDFBF"
+              Data="M 0 0 L 5 10  L 25 10 L 30 0z"/>
+        <Border Grid.Row="1" BorderBrush="#FFCDC09E" Height="8" Width="21"  BorderThickness="1,0,1,0" Background="#FFEBDFBF"/>
+        <Path Grid.Row="2" HorizontalAlignment="Left" Stroke="#FFCDC09E" StrokeThickness="1" Fill="#FFEBDFBF"
+              Data="M 5 0 L 0 10 L 30 10 L 25 0z"/>
+        <Border Grid.Row="2" Margin="-5,2,5,0" Width="25" BorderBrush="Black" Background="#FFEBDFBF" BorderThickness="1" CornerRadius="2" Panel.ZIndex="1">
+            <TextBlock FontSize="8" HorizontalAlignment="Center">
+                       <Run Text="G"/>
+                       <Run Text="{Binding GateName}"/></TextBlock>
+        </Border> 
     </Grid>
-   
+
 </UserControl>

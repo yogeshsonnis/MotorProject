@@ -1,5 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Media;
 
@@ -10,7 +12,8 @@ namespace UiComponent1.ViewModel
        public DashboardViewModel()
         {
             TankCollection = new ObservableCollection<TankViewModel>();
-           
+            GateCollection = new ObservableCollection<GateViewModel>();
+
             var TankRedColorBrush = (SolidColorBrush)Application.Current.Resources["TankRedColor"];
             var TankGreenColorBrush = (SolidColorBrush)Application.Current.Resources["SuccessColor"];
             var TankColorBrush = (SolidColorBrush)Application.Current.Resources["PrimaryColor"];
@@ -54,6 +57,10 @@ namespace UiComponent1.ViewModel
             
                 vm.MinValue = "0";
                 TankCollection.Add(vm);
+
+                GateViewModel gateViewModel = new GateViewModel();
+                gateViewModel.GateName = gateViewModel.GateName + 1;
+                GateCollection.Add(gateViewModel);
             }   
         }
         
@@ -66,6 +73,29 @@ namespace UiComponent1.ViewModel
             {
                 tankCollection = value;
                 OnPropertyChanged(nameof(TankCollection));
+            }
+        }
+
+        ObservableCollection<GateViewModel> gateCollection;
+        public ObservableCollection<GateViewModel> GateCollection
+        {
+            get
+            { return gateCollection; }
+            set
+            {
+                gateCollection = value;
+                OnPropertyChanged(nameof(GateCollection));
+            }
+        }
+
+        string gateName;
+        public string GateName
+        {
+            get { return gateName; }
+            set
+            {
+                gateName = value;
+                OnPropertyChanged(nameof(GateName));
             }
         }
 

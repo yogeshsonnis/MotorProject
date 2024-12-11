@@ -11,7 +11,7 @@ namespace UiComponent1.ViewModel
     {
         public GateViewModel()
         {
-            GateName = "G468";
+            GateName = 468;
             IsOnOf = false;
         }
 
@@ -28,9 +28,9 @@ namespace UiComponent1.ViewModel
         }
 
 
-        private string _gateName;
+        private int _gateName;
 
-        public string GateName
+        public int GateName
         {
             get { return _gateName; }
             set

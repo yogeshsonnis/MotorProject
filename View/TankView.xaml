@@ -9,7 +9,7 @@
     <Grid>
         
     <StackPanel>
-            <Grid Width="45" Height="150" x:Name="tankBg">
+            <Grid Width="36" Height="120" x:Name="tankBg">
                 <TextBlock x:Name="txtMaximumValue" HorizontalAlignment="Center" Foreground="White" FontWeight="SemiBold" FontSize="8"  Margin="0 5 0 0" />
                 <TextBlock Name="txtTankNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="SemiBold" FontSize="10"  />
                 <TextBlock Name="txtTankName" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="SemiBold" Margin="0 40 0 0" FontSize="10"  />
@@ -17,9 +17,8 @@
                     <TextBlock x:Name="txtMinValue" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="SemiBold" FontSize="8"  />
                 </Border>
             </Grid>
-            <Polygon Points="0,0 10,25 30,25,45,0" Fill="{Binding TankColor}" />
-            <!--<Polygon Points="0,0 6,15 24,15 29,0" 
-         Fill="LightGray" HorizontalAlignment="Center"/>-->
+            <Polygon Points="1,0,10,25,25,25,34,0" Fill="{Binding TankColor}" HorizontalAlignment="Center" /> 
+            <!--<Polygon Points="0,0 6,15 24,15 29,0" Fill="LightGray" HorizontalAlignment="Center"/>-->
         </StackPanel>
     </Grid>
 </UserControl>

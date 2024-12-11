@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UiComponent1.ViewModel;
 
 namespace UiComponent1.View
 {
     /// <summary>
-    /// Interaction logic for GateView1.xaml
+    /// Interaction logic for ElevatorView.xaml
     /// </summary>
-    public partial class GateView1 : UserControl
+    public partial class ElevatorView : UserControl
     {
-        public GateView1()
+        public ElevatorView()
         {
             InitializeComponent();
-            this.DataContext = new GateViewModel();
         }
     }
 }

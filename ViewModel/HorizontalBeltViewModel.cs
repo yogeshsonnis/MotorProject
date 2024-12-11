@@ -12,7 +12,7 @@ namespace UiComponent1.ViewModel
         public HorizontalBeltViewModel()
         {
             MotorName = "M324";
-            IsOnOf = false;
+            IsOnOf = true;
         }
 
         private bool? _isOnOf;

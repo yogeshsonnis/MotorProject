@@ -77,14 +77,14 @@
     <Compile Include="View\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ElevatorView.xaml.cs">
+      <DependentUpon>ElevatorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Gate4pngView.xaml.cs">
       <DependentUpon>Gate4pngView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GateSwitchesView.xaml.cs">
       <DependentUpon>GateSwitchesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\GateView.xaml.cs">
-      <DependentUpon>GateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GateView1.xaml.cs">
       <DependentUpon>GateView1.xaml</DependentUpon>
@@ -128,15 +128,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ElevatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Gate4pngView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\GateSwitchesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\GateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
