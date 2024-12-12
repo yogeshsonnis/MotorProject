@@ -11,33 +11,7 @@ namespace UiComponent1.ViewModel
     {
         public GateViewModel()
         {
-            GateName = 468;
-            IsOnOf = false;
-        }
 
-        private bool? _isOnOf;
-
-        public bool? IsOnOf
-        {
-            get { return _isOnOf; }
-            set
-            {
-                _isOnOf = value;
-                OnPropertyChanged("IsOnOf");
-            }
-        }
-
-
-        private int _gateName;
-
-        public int GateName
-        {
-            get { return _gateName; }
-            set
-            {
-                _gateName = value;
-                OnPropertyChanged("GateName");
-            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -14,7 +14,6 @@ namespace UiComponent1.ViewModel
     {
         public TankViewModel()
         {
-           
         }
 
         private string _maximumValue;
@@ -72,15 +71,27 @@ namespace UiComponent1.ViewModel
             }
         }
 
-        private int _gateName;
+        private string _gateName;
 
-        public int GateName
+        public string GateName
         {
             get { return _gateName; }
             set
             {
                 _gateName = value;
                 OnPropertyChanged("GateName");
+            }
+        }
+
+        private bool? _isOnOf;
+
+        public bool? IsOnOf
+        {
+            get { return _isOnOf; }
+            set
+            {
+                _isOnOf = value;
+                OnPropertyChanged("IsOnOf");
             }
         }
 

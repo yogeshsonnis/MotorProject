@@ -122,7 +122,7 @@
             </Grid>            
 
         <Grid Grid.Column="1">
-            <local:ElevatorView/>
+            <!--<local:ElevatorView/>-->
         </Grid>
         
         <Grid x:Name="secondViewMotorGrid" Grid.Column="2" Background="LightBlue"></Grid>
