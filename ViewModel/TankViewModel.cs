@@ -72,6 +72,18 @@ namespace UiComponent1.ViewModel
             }
         }
 
+        private int _gateName;
+
+        public int GateName
+        {
+            get { return _gateName; }
+            set
+            {
+                _gateName = value;
+                OnPropertyChanged("GateName");
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {

@@ -12,7 +12,7 @@ namespace UiComponent1.ViewModel
        public DashboardViewModel()
         {
             TankCollection = new ObservableCollection<TankViewModel>();
-            GateCollection = new ObservableCollection<GateViewModel>();
+            //GateCollection = new ObservableCollection<GateViewModel>();
 
             var TankRedColorBrush = (SolidColorBrush)Application.Current.Resources["TankRedColor"];
             var TankGreenColorBrush = (SolidColorBrush)Application.Current.Resources["SuccessColor"];
@@ -28,12 +28,14 @@ namespace UiComponent1.ViewModel
             var Tank9ColorBrush = (SolidColorBrush)Application.Current.Resources["NinethTankColor"];
             var Tank10ColorBrush = (SolidColorBrush)Application.Current.Resources["TenthTankColor"];
 
+           
             for (int i = 1; i <= 10; i++)
             {
                 TankViewModel vm = new TankViewModel();
                 vm.MaxValue = "10";
                 vm.TankNumber = i;
                 vm.TankName = i + " xyz";
+                vm.GateName = 468 + i;
                 if (i == 1)
                   vm.TankColor = Tank1ColorBrush;               
                 else if(i == 2)
@@ -56,11 +58,7 @@ namespace UiComponent1.ViewModel
                     vm.TankColor= Tank10ColorBrush;
             
                 vm.MinValue = "0";
-                TankCollection.Add(vm);
-
-                GateViewModel gateViewModel = new GateViewModel();
-                gateViewModel.GateName = gateViewModel.GateName + 1;
-                GateCollection.Add(gateViewModel);
+                TankCollection.Add(vm);               
             }   
         }
         

@@ -19,8 +19,7 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Orientation="Vertical">
-            <Border Height="500" Background="LightGreen"/>
-            
+            <Border Height="500" Background="LightGreen"/>            
         </StackPanel>
 
         <Border Height="500" Background="Black" Grid.Column="1"/>

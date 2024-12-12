@@ -24,7 +24,7 @@ namespace UiComponent1.View
         public GateView1()
         {
             InitializeComponent();
-            this.DataContext = new GateViewModel();
+            this.DataContext = new TankViewModel();
         }
     }
 }

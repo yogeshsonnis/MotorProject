@@ -91,7 +91,7 @@
                     <local:HorizontalBeltView/>
                 </Grid>
 
-                <ItemsControl x:Name="gatesItemsControl" ItemsSource="{Binding GateCollection}" Margin="0,0,0,-10" Grid.Row="1" Background="Transparent" Panel.ZIndex="2">
+                <!--<ItemsControl x:Name="gatesItemsControl" ItemsSource="{Binding GateCollection}" Margin="0,0,0,-10" Grid.Row="1" Background="Transparent" Panel.ZIndex="2">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -102,7 +102,7 @@
                             <local:GateView1/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                </ItemsControl>-->
 
                 <ItemsControl x:Name="tanksItemsControl" ItemsSource="{Binding TankCollection}" VerticalAlignment="Top" BorderBrush="Transparent" Background="Transparent" Grid.Row="2" Panel.ZIndex="1">
                     <ItemsControl.ItemsPanel>
@@ -112,7 +112,10 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <local:TankView MaximumValue="{Binding MaxValue}" TankNumber="{Binding TankNumber}" TankName="{Binding TankName}" TankColor="{Binding TankColor}" MinimumValue="{Binding MinValue}"/>
+                            <StackPanel>
+                                <local:GateView1 Margin="0,0,0,-10" Panel.ZIndex="2"/>
+                                <local:TankView MaximumValue="{Binding MaxValue}" TankNumber="{Binding TankNumber}" TankName="{Binding TankName}" TankColor="{Binding TankColor}" MinimumValue="{Binding MinValue}" Panel.ZIndex="1"/>
+                            </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

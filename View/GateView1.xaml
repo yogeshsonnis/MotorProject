@@ -57,9 +57,7 @@
         <Path Grid.Row="2" HorizontalAlignment="Left" Stroke="#FFCDC09E" StrokeThickness="1" Fill="#FFEBDFBF"
               Data="M 5 0 L 0 10 L 30 10 L 25 0z"/>
         <Border Grid.Row="2" Margin="-5,2,5,0" Width="25" BorderBrush="Black" Background="#FFEBDFBF" BorderThickness="1" CornerRadius="2" Panel.ZIndex="1">
-            <TextBlock FontSize="8" HorizontalAlignment="Center">
-                       <Run Text="G"/>
-                       <Run Text="{Binding GateName}"/></TextBlock>
+            <TextBlock FontSize="8" HorizontalAlignment="Center" Text="{Binding GateName}"/>
         </Border> 
     </Grid>
 
