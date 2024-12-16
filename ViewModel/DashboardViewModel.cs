@@ -37,10 +37,7 @@ namespace UiComponent1.ViewModel
                 vm.GateName = "G"+ (468 + i).ToString();
 
                 if (i == 1)
-                {
-                    vm.TankColor = Tank1ColorBrush;
-                    vm.IsOnOf = false;
-                }
+                   vm.TankColor = Tank1ColorBrush;
                 else if (i == 2)
                     vm.TankColor = Tank2ColorBrush;
                 else if (i == 3)
@@ -58,10 +55,8 @@ namespace UiComponent1.ViewModel
                 else if (i == 9)
                     vm.TankColor = Tank9ColorBrush;
                 else
-                {
                     vm.TankColor = Tank10ColorBrush;
-                    vm.IsOnOf = false;
-                }
+                   
                 vm.MinValue = "0";
                 TankCollection.Add(vm);               
             }   
@@ -78,19 +73,30 @@ namespace UiComponent1.ViewModel
                 OnPropertyChanged(nameof(TankCollection));
             }
         }
-
-        ObservableCollection<GateViewModel> gateCollection;
-        public ObservableCollection<GateViewModel> GateCollection
+        
+       ObservableCollection<TankViewModel> oddNumTankCollection;
+       public ObservableCollection<TankViewModel> OddNumTankCollection
         {
             get
-            { return gateCollection; }
+            { return oddNumTankCollection; }
             set
             {
-                gateCollection = value;
-                OnPropertyChanged(nameof(GateCollection));
+                oddNumTankCollection = value;
+                OnPropertyChanged(nameof(OddNumTankCollection));
             }
         }
 
+        ObservableCollection<TankViewModel> evenNumTankCollection;
+        public ObservableCollection<TankViewModel> EvenNumTankCollection
+        {
+            get
+            { return evenNumTankCollection; }
+            set
+            {
+                evenNumTankCollection = value;
+                OnPropertyChanged(nameof(EvenNumTankCollection));
+            }
+        }
         
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)

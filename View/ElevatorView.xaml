@@ -7,22 +7,84 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Width="50">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition  Height="30"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
-        
-        <StackPanel Orientation="Vertical">
-            <Border Height="500" Background="LightGreen"/>            
-        </StackPanel>
 
-        <Border Height="500" Background="Black" Grid.Column="1"/>
-        <Border Height="500" Background="LightGreen" Grid.Column="2"/>
+        <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Path Stroke="Black" Fill="#FF5ECF39" StrokeThickness="1" Data="M 0 25 a 30 30 0 0 1 20 -25 L 20 25 z" />
+        <Path Stroke="Black" Fill="#FF5ECF39" StrokeThickness="1" Grid.Column="1" Data="M 0 26 a 30 30 0 0 1 35 -25 L 35 25">
+            <Path.RenderTransform>
+                <ScaleTransform ScaleX="-1" CenterX="13" />
+            </Path.RenderTransform>
+        </Path>
+        </Grid>
+        <Path Stroke="Black" Fill="#FF5ECF39" Grid.ColumnSpan="2" Grid.Row="1" StrokeThickness="1" Grid.RowSpan="2" Data="M 0 0 L 0 15 H 49.5 a 20 30 0 0 0 -10 -25.5"/>
+        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="25" BorderBrush="Black" Background="Red" BorderThickness="1" CornerRadius="2" HorizontalAlignment="Right" Panel.ZIndex="1" Margin="0,50,0,0">
+            <TextBlock FontSize="8" HorizontalAlignment="Center" Text="M431"/>
+        </Border>
+        <Border Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" Width="45" BorderBrush="Blue" Background="#FFEBDFBF" BorderThickness="1" CornerRadius="2" Panel.ZIndex="1" Margin="0,0,0,10">
+            <TextBlock FontSize="8" HorizontalAlignment="Center" Text="15A"/>
+        </Border>
+        <Grid Grid.Row="2" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="45*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Height="580" Background="#FF5ECF39" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2">
+                <Grid>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,30,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,60,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,90,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,120,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,150,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,180,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,210,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,240,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,270,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,300,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,330,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,360,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,390,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,420,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,450,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,480,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                    <Path HorizontalAlignment="Left" StrokeThickness="1" Fill=" white" Margin="0,510,0,0" Data="M 0 0 L 3 10 L 150 0z"/>
+                </Grid>
+            </Border>
+            <Border Height="580" Background="Black" Grid.Column="1" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Border Height="580" Background="#FF5ECF39" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2"/>
+
+            <Path HorizontalAlignment="Center" StrokeThickness="1" Data="M 5 0 L 0 10 L 30 10 L 25 0z" Grid.Column="1" Grid.RowSpan="2"/>
+
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Path Stroke="Black" Fill="#FF5ECF39" Data="M 15 20 a 8 10 0 1 1 -5 0 z"/>
+            <Path Grid.Column="0" Stroke="Black" StrokeThickness="1" Fill="#FF5ECF39" Data="M 6.5 0 H -0.3 L 12 20 a 10 10 0 0 0 24 -24"></Path>
+            <Border Grid.Column="1" BorderThickness="1,0,1,1" BorderBrush="Black" Background="#FF5ECF39"/>
+            <Path Stroke="Black" Grid.Column="2" Fill="#FF5ECF39" Data="M 15 20 a 8 10 0 1 1 -5 0 z"/>
+            <Path Grid.Column="2" Stroke="Black" StrokeThickness="1" Fill="#FF5ECF39" Data="M 14 0 L 18 0 V 15 a 20 20 0 0 1 -20 9.5 V -25"/> <!--M 15 0 L 8 0 a 55 25 10 0 0 -25 55 z-->
+
+        </Grid>
     </Grid>
 </UserControl>
