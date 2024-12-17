@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net.NetworkInformation;
+using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 
@@ -9,57 +10,29 @@ namespace UiComponent1.ViewModel
 {
     public class DashboardViewModel : INotifyPropertyChanged
     {
-       public DashboardViewModel()
+        SolidColorBrush TankRedColorBrush = (SolidColorBrush)Application.Current.Resources["TankRedColor"];
+        SolidColorBrush TankGreenColorBrush = (SolidColorBrush)Application.Current.Resources["SuccessColor"];
+        SolidColorBrush TankColorBrush = (SolidColorBrush)Application.Current.Resources["PrimaryColor"];
+        SolidColorBrush Tank1ColorBrush = (SolidColorBrush)Application.Current.Resources["FirstTankColor"];
+        SolidColorBrush Tank2ColorBrush = (SolidColorBrush)Application.Current.Resources["SecondTankColor"];
+        SolidColorBrush Tank3ColorBrush = (SolidColorBrush)Application.Current.Resources["ThirdTankColor"];
+        SolidColorBrush Tank4ColorBrush = (SolidColorBrush)Application.Current.Resources["FourthTankColor"];
+        SolidColorBrush Tank5ColorBrush = (SolidColorBrush)Application.Current.Resources["FifthTankColor"];
+        SolidColorBrush Tank6ColorBrush = (SolidColorBrush)Application.Current.Resources["SixthTankColor"];
+        SolidColorBrush Tank7ColorBrush = (SolidColorBrush)Application.Current.Resources["SeventhTankColor"];
+        SolidColorBrush Tank8ColorBrush = (SolidColorBrush)Application.Current.Resources["EighthTankColor"];
+        SolidColorBrush Tank9ColorBrush = (SolidColorBrush)Application.Current.Resources["NinethTankColor"];
+        SolidColorBrush Tank10ColorBrush = (SolidColorBrush)Application.Current.Resources["TenthTankColor"]; 
+
+        public DashboardViewModel()
         {
             TankCollection = new ObservableCollection<TankViewModel>();
-
-            var TankRedColorBrush = (SolidColorBrush)Application.Current.Resources["TankRedColor"];
-            var TankGreenColorBrush = (SolidColorBrush)Application.Current.Resources["SuccessColor"];
-            var TankColorBrush = (SolidColorBrush)Application.Current.Resources["PrimaryColor"];
-            var Tank1ColorBrush = (SolidColorBrush)Application.Current.Resources["FirstTankColor"];
-            var Tank2ColorBrush = (SolidColorBrush)Application.Current.Resources["SecondTankColor"];
-            var Tank3ColorBrush = (SolidColorBrush)Application.Current.Resources["ThirdTankColor"];
-            var Tank4ColorBrush = (SolidColorBrush)Application.Current.Resources["FourthTankColor"];
-            var Tank5ColorBrush = (SolidColorBrush)Application.Current.Resources["FifthTankColor"];
-            var Tank6ColorBrush = (SolidColorBrush)Application.Current.Resources["SixthTankColor"];
-            var Tank7ColorBrush = (SolidColorBrush)Application.Current.Resources["SeventhTankColor"];
-            var Tank8ColorBrush = (SolidColorBrush)Application.Current.Resources["EighthTankColor"];
-            var Tank9ColorBrush = (SolidColorBrush)Application.Current.Resources["NinethTankColor"];
-            var Tank10ColorBrush = (SolidColorBrush)Application.Current.Resources["TenthTankColor"];
-
+            OddNumTankCollection = new ObservableCollection<TankViewModel>();
+            EvenNumTankCollection = new ObservableCollection<TankViewModel>();
            
-            for (int i = 1; i <= 10; i++)
-            {
-                TankViewModel vm = new TankViewModel();
-                vm.MaxValue = "10";
-                vm.TankNumber = i;
-                vm.TankName = i + " xyz";
-                vm.GateName = "G"+ (468 + i).ToString();
-
-                if (i == 1)
-                   vm.TankColor = Tank1ColorBrush;
-                else if (i == 2)
-                    vm.TankColor = Tank2ColorBrush;
-                else if (i == 3)
-                    vm.TankColor = Tank3ColorBrush;
-                else if (i == 4)
-                    vm.TankColor = Tank4ColorBrush;
-                else if (i == 5)
-                    vm.TankColor = Tank5ColorBrush;
-                else if (i == 6)
-                    vm.TankColor = Tank6ColorBrush;
-                else if (i == 7)
-                    vm.TankColor = Tank7ColorBrush;
-                else if (i == 8)
-                    vm.TankColor = Tank8ColorBrush;
-                else if (i == 9)
-                    vm.TankColor = Tank9ColorBrush;
-                else
-                    vm.TankColor = Tank10ColorBrush;
-                   
-                vm.MinValue = "0";
-                TankCollection.Add(vm);               
-            }   
+            LoadTankCollection();
+            LoadOddNumTankCollection();
+            LoadEvenNumTankCollection();
         }
         
        ObservableCollection<TankViewModel> tankCollection;
@@ -98,6 +71,91 @@ namespace UiComponent1.ViewModel
             }
         }
         
+        public void LoadTankCollection()
+        {
+            int i;
+            for (i = 1; i <= 10; i++)
+            {
+                TankViewModel vm = new TankViewModel();
+                vm.MaxValue = "10";
+                vm.TankNumber = i;
+                vm.TankName = i + " xyz";
+                vm.GateName = "G" + (43 - i).ToString();
+
+                if (i == 1)
+                    vm.TankColor = Tank1ColorBrush;
+                else if (i == 2)
+                    vm.TankColor = Tank2ColorBrush;
+                else if (i == 3)
+                    vm.TankColor = Tank3ColorBrush;
+                else if (i == 4)
+                    vm.TankColor = Tank4ColorBrush;
+                else if (i == 5)
+                    vm.TankColor = Tank5ColorBrush;
+                else if (i == 6)
+                    vm.TankColor = Tank6ColorBrush;
+                else if (i == 7)
+                    vm.TankColor = Tank7ColorBrush;
+                else if (i == 8)
+                    vm.TankColor = Tank8ColorBrush;
+                else if (i == 9)
+                    vm.TankColor = Tank9ColorBrush;
+                else
+                    vm.TankColor = Tank10ColorBrush;
+
+                vm.MinValue = "0";
+                TankCollection.Add(vm);
+            }
+        }
+
+        public void LoadOddNumTankCollection()
+        {
+            int count = 0;
+            for (int i = 5; i >= 1; i -= 2 ) 
+            {
+                TankViewModel tankViewModel = new TankViewModel();
+                tankViewModel.MaxValue = "3";
+                tankViewModel.TankNumber = i;
+                tankViewModel.TankName = i + " xyz";
+                tankViewModel.MinValue = "0";
+                tankViewModel.GateName = "G" + (22 - count).ToString();
+                count++;
+
+                if (i == 5)
+                    tankViewModel.TankColor = Tank5ColorBrush;
+                else if (i == 3)
+                    tankViewModel.TankColor = Tank3ColorBrush;
+                else
+                    tankViewModel.TankColor = Tank1ColorBrush;
+
+                OddNumTankCollection.Add(tankViewModel);
+            }
+        }
+
+        public void LoadEvenNumTankCollection()
+        {
+            int count = 0;
+            for (int i = 2; i <=6 ; i += 2)
+            {
+                TankViewModel tankViewModel = new TankViewModel();
+                tankViewModel.MaxValue = "3";
+                tankViewModel.TankNumber = i;
+                tankViewModel.TankName = i + " xyz";
+                tankViewModel.MinValue = "0";
+                tankViewModel.GateName = "G" + (19 - count).ToString();
+                count++;
+
+                if (i == 2)
+                    tankViewModel.TankColor = Tank2ColorBrush;
+                else if (i == 4)
+                    tankViewModel.TankColor = Tank4ColorBrush;
+                else
+                    tankViewModel.TankColor = Tank6ColorBrush;
+
+                EvenNumTankCollection.Add(tankViewModel);
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {
